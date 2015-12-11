@@ -18,5 +18,9 @@ gdp_data <- WDI(indicator = c('NY.GDP.MKTP.KD', 'NY.GDP.MKTP.KD.ZG',
                 country = 'US', start = 1966, end = 2014)
 write.csv(file = '/rawdata/raw_gdp_data.csv', x = gdp_data)
 
+url <- 'http://www.the-numbers.com/movies/#tab=year'
+rawpt <- readHTMLTable(url, which = 1, stringsAsFactors = FALSE)
+write.csv(file = '/rawdata/raw_top_grossing_movie_yearly.csv', x = rawpt)
+
 #create README.md
 file.create('README.md')

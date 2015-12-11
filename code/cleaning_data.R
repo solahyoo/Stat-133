@@ -41,3 +41,27 @@ box_office$Tickets.Sold <- box_office$Tickets.Sold * 1000000
 
 # Write to csv file
 write.csv(file = '/data/box_offce.csv', x = box_office, row.names = FALSE)
+
+# Clean data for top grossing movie of the year
+top_movie <- read.csv(file = '/rawdata/raw_top_grossing_movie_yearly.csv',
+                      stringsAsFactors = FALSE)
+top_movie <- subset(top_movie, Year >= 1970 & Year < 2015)
+top_movie <- top_movie[c("Year", 'Movie', 'Genre', 'Production.Budget',
+                         'Total.Domestic.Box.Office')]
+# Convert budget to numeric
+budget <- top_movie$Production.Budget
+top_movie$Production.Budget <- as.numeric(gsub(",", "",
+                                               gsub("\\$", "", budget)))
+# Convert total box office to numeric
+total_box_office <- top_movie$Total.Domestic.Box.Office
+top_movie$Total.Domestic.Box.Office <- as.numeric(gsub(",", "",
+                                        gsub("\\$", "", total_box_office)))
+# Renumber rows
+row.names(top_movie) <- 1:nrow(top_movie)
+
+# Write to csv file
+write.csv(file = '/data/top_grossing_movie_yearly.csv', x = top_movie, row.names = FALSE)
+
+
+
+
