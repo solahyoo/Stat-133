@@ -1,16 +1,20 @@
 ---
-title: "data_analysis"
-author: "Sol Ah Yoo"
+title: "Stat 133 Final Project"
+author: "Sol Ah Yoo & Sharon Hong"
 date: "December 9, 2015"
 output: pdf_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
+Import data 
 ```{r}
-summary(cars)
+top_movie <- read.csv('C:/Users/tjf00_000/OneDrive/Documents/finalproj/data/top_grossing_movie_yearly.csv')
+```
+Find the average total domestic box office by genre.
+```{r}
+avg <- aggregate(top_movie[, 4:5], list(top_movie$Genre), mean, na.rm = TRUE)
+colnames(avg)[1] <- 'Genre'
+
+
 ```
 
 You can also embed plots, for example:
