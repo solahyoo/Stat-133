@@ -1,36 +1,36 @@
-"Year","Movie","Genre","Production.Budget","Total.Domestic.Box.Office"
-1980,"Star Wars Ep. V: The Empire Strikes Back","Adventure",2.3e+07,290158751
-1981,"Raiders of the Lost Ark","Adventure",2e+07,248159971
-1982,"ET: The Extra-Terrestrial","Drama",10500000,434949459
-1983,"Star Wars Ep. VI: Return of the Jedi","Adventure",32500000,309125409
-1984,"Ghostbusters","Comedy",3e+07,242212467
-1985,"Back to the Future","Adventure",1.9e+07,212259762
-1986,"Top Gun","Action",1.5e+07,179800601
-1987,"3 Men and a Baby","Comedy",1.5e+07,164016972
-1988,"Rain Man","Comedy",2.5e+07,168106313
-1989,"Batman","Action",3.5e+07,248972777
-1990,"Home Alone","Comedy",1.5e+07,277504018
-1991,"Beauty and the Beast","Musical",2e+07,218951625
-1992,"Aladdin","Comedy",2.8e+07,208577270
-1993,"Jurassic Park","Action",6.3e+07,395708305
-1994,"The Lion King","Adventure",79300000,422780140
-1995,"Toy Story","Adventure",3e+07,191652928
-1996,"Independence Day","Adventure",7.5e+07,306124059
-1997,"Titanic","Thriller/Suspense",2e+08,658672302
-1998,"Saving Private Ryan","Drama",6.5e+07,216119491
-1999,"Star Wars Ep. I: The Phantom Menace","Adventure",1.15e+08,474544677
-2000,"How the Grinch Stole Christmas","Comedy",1.23e+08,260044825
-2001,"Harry Potter and the Sorcerers Stone","Adventure",1.25e+08,317575550
-2002,"Spider-Man","Adventure",1.39e+08,403706375
-2003,"Finding Nemo","Adventure",9.4e+07,380529370
-2004,"Shrek 2","Adventure",7e+07,436471036
-2005,"Star Wars Ep. III: Revenge of the Sith","Adventure",1.15e+08,380270577
-2006,"Pirates of the Caribbean: Dead Man's Chest","Adventure",2.25e+08,423315812
-2007,"Spider-Man 3","Adventure",2.58e+08,336530303
-2008,"The Dark Knight","Action",1.85e+08,533345358
-2009,"Avatar","Action",4.25e+08,760507625
-2010,"Toy Story 3","Adventure",2e+08,415004880
-2011,"Harry Potter and the Deathly Hallows: Part II","Adventure",1.25e+08,381011219
-2012,"The Avengers","Adventure",2.25e+08,623279547
-2013,"The Hunger Games: Catching Fire","Adventure",1.3e+08,424668047
-2014,"American Sniper","Drama",5.8e+07,350126372
+"Year","Movie","Genre","Production.Budget","Total.Domestic.Box.Office","Decade"
+1980,"Star Wars Ep. V: The Empire Strikes Back","Adventure",2.3e+07,290158751,"1980s"
+1981,"Raiders of the Lost Ark","Adventure",2e+07,248159971,"1980s"
+1982,"ET: The Extra-Terrestrial","Drama",10500000,434949459,"1980s"
+1983,"Star Wars Ep. VI: Return of the Jedi","Adventure",32500000,309125409,"1980s"
+1984,"Ghostbusters","Comedy",3e+07,242212467,"1980s"
+1985,"Back to the Future","Adventure",1.9e+07,212259762,"1980s"
+1986,"Top Gun","Action",1.5e+07,179800601,"1980s"
+1987,"3 Men and a Baby","Comedy",1.5e+07,164016972,"1980s"
+1988,"Rain Man","Comedy",2.5e+07,168106313,"1980s"
+1989,"Batman","Action",3.5e+07,248972777,"1980s"
+1990,"Home Alone","Comedy",1.5e+07,277504018,"1990s"
+1991,"Beauty and the Beast","Musical",2e+07,218951625,"1990s"
+1992,"Aladdin","Comedy",2.8e+07,208577270,"1990s"
+1993,"Jurassic Park","Action",6.3e+07,395708305,"1990s"
+1994,"The Lion King","Adventure",79300000,422780140,"1990s"
+1995,"Toy Story","Adventure",3e+07,191652928,"1990s"
+1996,"Independence Day","Adventure",7.5e+07,306124059,"1990s"
+1997,"Titanic","Thriller/Suspense",2e+08,658672302,"1990s"
+1998,"Saving Private Ryan","Drama",6.5e+07,216119491,"1990s"
+1999,"Star Wars Ep. I: The Phantom Menace","Adventure",1.15e+08,474544677,"1990s"
+2000,"How the Grinch Stole Christmas","Comedy",1.23e+08,260044825,"2000s"
+2001,"Harry Potter and the Sorcerers Stone","Adventure",1.25e+08,317575550,"2000s"
+2002,"Spider-Man","Adventure",1.39e+08,403706375,"2000s"
+2003,"Finding Nemo","Adventure",9.4e+07,380529370,"2000s"
+2004,"Shrek 2","Adventure",7e+07,436471036,"2000s"
+2005,"Star Wars Ep. III: Revenge of the Sith","Adventure",1.15e+08,380270577,"2000s"
+2006,"Pirates of the Caribbean: Dead Man's Chest","Adventure",2.25e+08,423315812,"2000s"
+2007,"Spider-Man 3","Adventure",2.58e+08,336530303,"2000s"
+2008,"The Dark Knight","Action",1.85e+08,533345358,"2000s"
+2009,"Avatar","Action",4.25e+08,760507625,"2000s"
+2010,"Toy Story 3","Adventure",2e+08,415004880,"2010s"
+2011,"Harry Potter and the Deathly Hallows: Part II","Adventure",1.25e+08,381011219,"2010s"
+2012,"The Avengers","Adventure",2.25e+08,623279547,"2010s"
+2013,"The Hunger Games: Catching Fire","Adventure",1.3e+08,424668047,"2010s"
+2014,"American Sniper","Drama",5.8e+07,350126372,"2010s"

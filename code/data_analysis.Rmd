@@ -4,18 +4,46 @@ author: "Sol Ah Yoo & Sharon Hong"
 date: "December 9, 2015"
 output: pdf_document
 ---
-
+C:/Users/tjf00_000/OneDrive/Documents/finalproj
 Import data 
 ```{r}
-top_movie <- read.csv('C:/Users/tjf00_000/OneDrive/Documents/finalproj/data/top_grossing_movie_yearly.csv')
+top_movie <- read.csv('/data/top_grossing_movie_yearly.csv')
 ```
 Find the average total domestic box office by genre.
 ```{r}
 avg <- aggregate(top_movie[, 4:5], list(top_movie$Genre), mean, na.rm = TRUE)
 colnames(avg)[1] <- 'Genre'
 
+top_movie$Genre <- as.factor(top_movie$Genre)
+
+genre_freq <- count(top_movie, "Genre")
+avg <- merge(avg, genre_freq)
+avg <- avg[c(1, 4, 2, 3)]
+
+colnames(avg)[3] <- "AvgProductionBudget"
+colnames(avg)[4] <- "AvgDomesticBoxOffice"
+
+g <- ggplot(avg, aes(x = Genre, y = freq))
+
+g + geom_point(aes(size = AvgDomesticBoxOffice / 1000000,
+                   color = AvgProductionBudget / 1000000)) +
+  scale_size_continuous(range = c(10, 30))
+
 
 ```
+
+How many different genres are there and what decade did they come out in?
+What are the most popular genres?
+
+```{r}
+ggplot(top_movie, aes(x = Genre, fill = Decade)) + geom_bar() +
+        labs(title = "Different Genres", y = "Count")
+```
+
+With the advancement of technology, directors are able to make realistic looking movies that require a lot of computer-generated imagery, such as adventure (ie. superhero).....?
+
+Adventure movies tend to be more popular with the general public.
+
 
 You can also embed plots, for example:
 
