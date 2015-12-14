@@ -14,3 +14,5 @@ We want to see how the box office responds to the changes of the economy and how
 
 ###### Organization of Directories and Files -
 Raw data is stored in the folder rawdata, cleaned data is in data, and all scripts and codes are in the folder code.
+
+Images of our graphs are stored in the images folder and the completed report is in the report folder.
