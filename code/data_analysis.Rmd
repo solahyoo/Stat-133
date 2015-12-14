@@ -4,13 +4,65 @@ author: "Sol Ah Yoo & Sharon Hong"
 date: "December 9, 2015"
 output: pdf_document
 ---
-C:/Users/tjf00_000/OneDrive/Documents/finalproj
-Import data 
+
+Libraries needed:
 ```{r}
-top_movie <- read.csv('/data/top_grossing_movie_yearly.csv')
+library(plyr)
+library(ggplot2)
 ```
-Find the average total domestic box office by genre.
+
+```{r, echo=FALSE}
+top_movie <-
+read.csv('C:/Users/tjf00_000/OneDrive/Documents/finalproj/data/top_grossing_movie_yearly.csv')
+
+box_office <- 
+read.csv('C:/Users/tjf00_000/OneDrive/Documents/finalproj/data/box_office.csv')
+
+gdp <- 
+read.csv('C:/Users/tjf00_000/OneDrive/Documents/finalproj/data/gdp_data.csv')
+
+```
+
+
+```{r, echo=FALSE}
+box_office$gdp <- gdp$GDP..constant.2005.US..
+
+box_office$gdp <- box_office$gdp / 1000000
+
+box_office$Total.Gross2 <- box_office$Total.Gross / 1000
+  
+ggplot(box_office, aes(Year)) + 
+  geom_line(aes(y = Total.Gross2, color = 'total.gross'), size = 1.5) + 
+  geom_line(aes(y = gdp, color = 'gdp'), size = 1.5) + 
+  labs(title = 'Trends in GDP and Box Office (Yearly)',
+       x = 'Year',
+       y = 'Total Gross ($)') +
+  scale_color_manual(name = 'Legend',
+                       breaks = c('gdp','total.gross'),
+                       values = c('#cc0000', '#ff8000'),
+                       labels = c('GDP in 2005 $ \n (per million $)', 
+                                  'Total Domestic Gross \n (per thousand $)'))
+```
+
+
 ```{r}
+box_office$Top.Movie <- top_movie$Total.Domestic.Box.Office
+percent <- (box_office$Top.Movie / box_office$Total.Gross) * 100
+
+ggplot(box_office, aes(x = Year, y = percent)) +
+  geom_line(aes(color = percent), size = 1.5) +
+  geom_point(color = '#206020', size = 3) +
+  scale_color_gradient(low = '#8CD98C', high = '#004D00') +
+  labs(title = 'Percentage of Top Movie of the Year \n Versus Total Box Office',
+       x = 'Year',
+       y = 'Percentage (%)',
+       color = '%') +
+  theme_bw() + theme(panel.background = element_rect(fill = '#ffffcc'))
+```
+
+Find the average total domestic box office by genre. We want to 
+
+```{r, echo=FALSE}
 avg <- aggregate(top_movie[, 4:5], list(top_movie$Genre), mean, na.rm = TRUE)
 colnames(avg)[1] <- 'Genre'
 
@@ -27,17 +79,23 @@ g <- ggplot(avg, aes(x = Genre, y = freq))
 
 g + geom_point(aes(size = AvgDomesticBoxOffice / 1000000,
                    color = AvgProductionBudget / 1000000)) +
-  scale_size_continuous(range = c(10, 30))
-
+  scale_size_continuous(range = c(10, 30)) +
+  labs(title =
+  "Average Domestic Box Office and Average \n Production Budget for each Genre",
+       color = "Avg Production Budget per Genre (in millions $)",
+       size = "Avg Domestic Box Office per Genre (in millions $)",
+       y = 'Number of Movies Made') + expand_limits(y = c(-1, 20)) +
+  scale_color_gradient(low = "#99ddff", high = "#002699")
 
 ```
 
 How many different genres are there and what decade did they come out in?
 What are the most popular genres?
 
-```{r}
+```{r, echo=FALSE}
 ggplot(top_movie, aes(x = Genre, fill = Decade)) + geom_bar() +
-        labs(title = "Different Genres", y = "Count")
+        labs(title = "Different Genres",
+             y = "Number of Movies Made")
 ```
 
 With the advancement of technology, directors are able to make realistic looking movies that require a lot of computer-generated imagery, such as adventure (ie. superhero).....?
@@ -45,10 +103,3 @@ With the advancement of technology, directors are able to make realistic looking
 Adventure movies tend to be more popular with the general public.
 
 
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
